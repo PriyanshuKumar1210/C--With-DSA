@@ -7,14 +7,14 @@ using namespace std;
 int main(){
     float pen,pencil,eraser;
 
-    cout<<"Enter the price of pen , pencil & eraser :"<<endl;
+    cout<<"Enter the price of pen , pencil & eraser :";
     cin>>pen>>pencil>>eraser;
 
     float cost = pen+pencil+eraser;
     float gst = (cost*18)/100;
     float total_cost = cost+gst;
 
-    cout<<"Cost of Product : "<<cost<<endl;
-    cout<<"Gst Amount : "<<gst<<endl;
-    cout<<"Total Amount : "<<total_cost<<endl;
+    cout<<"Cost of Product : "<<cost;
+    cout<<"Gst Amount : "<<gst;
+    cout<<"Total Amount : "<<total_cost;
 }
