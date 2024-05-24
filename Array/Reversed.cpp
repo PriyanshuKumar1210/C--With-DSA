@@ -26,7 +26,8 @@ int main(){
 
 // Copy the array elements into the origianl array
     for(int i=0;i<n;i++){
-        copyArr[i] = arr[i];
+       copyArr[i] = arr[i];
+      // arr[i] = copyArr[i];
     }
 
     printArray(arr,n);

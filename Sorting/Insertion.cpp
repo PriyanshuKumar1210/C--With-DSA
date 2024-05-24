@@ -20,8 +20,10 @@ void insertionSort(int *arr,int n){
            
         }
          arr[prev+1]=curr;  
+         printArray(arr,n);
+
     }
-    printArray(arr,n);
+   // printArray(arr,n);
 }
 
 

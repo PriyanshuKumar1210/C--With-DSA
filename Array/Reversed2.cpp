@@ -11,7 +11,7 @@ void printArray(int arr[],int n){
 }
 int main(){
 
-    int arr[] = {2,3,45,6};
+    int arr[] = {2,3,45,6,8};
 
     int n = sizeof(arr)/sizeof(int);
     int start = 0,end = n-1;
