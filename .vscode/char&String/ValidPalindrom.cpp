@@ -2,7 +2,7 @@
 #include<cstring>
 using namespace std;
 
-bool palindrom(char word[],int n){
+bool palindrome(char word[],int n){
     int start=0,end=n-1;
 
     while(start<end){
@@ -18,7 +18,10 @@ int main(){
     char word[20];
     cin.getline(word,30);
 
-    bool res = palindrom(word,strlen(word));
-    cout<<"Palindrome or not "<<res<<endl;
+    bool res = palindrome(word,strlen(word));
+    if(res==0)
+        cout<<"Not a palindrome Number "<<endl;
+    else
+        cout<<"Palindrome number "<<endl;
     return 0;
 }
