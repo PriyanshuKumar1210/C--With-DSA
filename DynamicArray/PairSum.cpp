@@ -6,7 +6,7 @@ using namespace std;
 
 vector<int> pairSum(vector<int> vec, int target)
 {
-
+/*
     int start = 0, end = vec.size() - 1;
     vector<int> ans;
     int currSum = 0;
@@ -31,14 +31,36 @@ vector<int> pairSum(vector<int> vec, int target)
         { // if(currSum<target)
             start++;
         }
+
+        
     }
-    return ans;
+    return ans;*/
+
+  
+        vector <int> answer;
+        int n = vec.size()-1;
+        
+        for(int i=0;i<n;i++){
+            int currSum =0;
+            for(int j=i+1;i<n;j++){
+                   currSum = vec[i]+vec[j]; 
+
+                   if(currSum==target){
+                        answer.push_back(i);
+                        answer.push_back(j);
+                        return answer;
+                    }
+            }
+        }
+        return answer; 
+    
+
 }
 
 int main()
 {
 
-    vector<int> vec = {2, 3, 7, 11, 15};
+    vector<int> vec = {2,6,7,15};
     int target = 9;
     vector<int> res ;
      res = pairSum(vec, target);
