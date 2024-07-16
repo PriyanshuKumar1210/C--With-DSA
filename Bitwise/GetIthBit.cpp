@@ -1,3 +1,5 @@
+
+/* get the which bit is available at ith bit either 0 or 1*/
 #include<iostream>
 using namespace std;
 
