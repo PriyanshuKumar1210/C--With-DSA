@@ -19,15 +19,13 @@ int main(){
 // copy the array elements to the another array
     for(int i=0;i<n;i++){
         int j= n-i-1;
-        for(int i=0;i<n;i++){
             copyArr[i] = arr[j];
-        }
     }
 
 // Copy the array elements into the origianl array
     for(int i=0;i<n;i++){
-       copyArr[i] = arr[i];
-      // arr[i] = copyArr[i];
+       // copyArr[i] = arr[i];
+      arr[i] = copyArr[i];
     }
 
     printArray(arr,n);
