@@ -12,6 +12,7 @@ long countSubstring(string str,char ch,int n){
         return substring;
 }
 
+
 int main(){
     string str = "ababa";
     char ch = 'b';
