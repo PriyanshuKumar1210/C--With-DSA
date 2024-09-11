@@ -4,7 +4,7 @@ using namespace std;
 
 int firstOccur(vector <int> vec,int i){
     int n = vec.size();
-    int target = 31;
+    int target = 1;
     
 
     if(i==n-1){     //Base Case
