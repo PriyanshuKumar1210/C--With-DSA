@@ -79,7 +79,7 @@ int nQueens(vector<vector<char>> board, int row)
     flag = false;
 
     int count = 0;
-    for (int j = 0; j < n; j++) //j=col
+    for (int j = 0; j < n; j++)
     {
         if (isSafe(board, row, j))
         {
@@ -108,7 +108,6 @@ int main()
 
         board.push_back(newRow);
     }
-
 
     int count = nQueens(board, 0);
     cout<<" count :"<<count<<endl;
