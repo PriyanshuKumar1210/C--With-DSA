@@ -97,6 +97,17 @@ public:
             newNode->next = temp->next;
             temp->next = newNode;
     }
+
+    void pop_front(){
+        if(head==NULL){
+            cout<<"List is empty"<<endl;
+        }
+
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
 };
 
 int main(){
@@ -108,6 +119,8 @@ int main(){
     ll.push_back(4);
     ll.printList();
     ll.insert(100,2);
+    ll.printList();
+    ll.pop_front();
     ll.printList();
     return 0;
 }
