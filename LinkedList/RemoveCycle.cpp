@@ -66,7 +66,7 @@ public:
             cout<<"\n";
     }
 
-    bool isCycle(Node* head){
+    bool detectCycle(Node* head){
         Node* fast;
         Node* slow;
 
@@ -86,6 +86,43 @@ public:
                     return false;
     }
 
+    void removeCycle(Node* head){
+        Node* slow;
+        Node* fast;
+        
+
+        bool isCycle = detectCycle(head);
+        
+
+        if(!isCycle){
+            cout<<"Cycle doesn't exists \n";
+            return;
+        }
+
+        slow = head;
+        if(slow==fast){
+
+            while(fast->next!=slow){
+                fast = fast->next;
+
+            }
+                fast->next = NULL;
+
+        }
+
+        else{
+            Node* prev=fast;
+            while(slow!=fast){
+                slow = slow->next;
+                prev = fast;
+                fast = fast->next;
+
+            }
+            prev->next = NULL ; //It's removes the cycle 
+        }
+
+    }
+
 };
 
 int main(){
@@ -97,6 +134,9 @@ int main(){
     ll.push_front(2);
     ll.push_front(1);
     ll.tail->next = ll.head; //this lines helps to create a cycle
-    ll.isCycle(ll.head);
+    // ll.print();
+    // ll.isCycle(ll.head);
+    ll.removeCycle(ll.head);
+    ll.print();
     return 0;
 }
