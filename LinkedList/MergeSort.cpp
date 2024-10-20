@@ -117,7 +117,7 @@ Node* merge(Node* left , Node* right){
     while(i!=NULL && j!=NULL){
         if(i->data <= j->data){
             ans.push_back(i->data);
-            i= i->next;
+            i = i->next;
         }
 
         else{
@@ -145,7 +145,7 @@ Node* mergeSort(Node* head){
         }
 
 
-        Node* rightHead= splitRight(head);//split the linked list into two part
+        Node* rightHead = splitRight(head);//split the linked list into two part
         Node* left = mergeSort(head);
         Node* right = mergeSort(rightHead); //right part
 

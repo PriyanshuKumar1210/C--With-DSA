@@ -1,7 +1,6 @@
 #include <iostream>
-#include <list>
-#include <iterator>
 using namespace std;
+
 class Node
 {
 public:
@@ -19,7 +18,7 @@ public:
         if (next != NULL)
         {
             delete next;
-            next = NULL;        
+            next = NULL;
         }
     }
 };
@@ -27,8 +26,8 @@ public:
 class List
 {
 public:
-    Node *head;
-    Node *tail;
+    Node* head;
+    Node* tail;
 
     List()
     {
@@ -45,8 +44,9 @@ public:
         }
     }
 
-void push_front(int val){
-        Node *newnode = new Node(val); // create a node with a value
+    void push_front(int val)
+    {
+        Node* newnode = new Node(val); // create a node with a value
 
         if (head == NULL)
         {
@@ -63,49 +63,116 @@ void push_front(int val){
         }
     }
 
-void push_back(int val){
-        Node *newnode = new Node(val);
+    void push_back(int val)
+    {
+        Node* newnode = new Node(val);
 
-        if(tail==NULL){
-            head = tail =  newnode;
+        if (tail == NULL)
+        {
+            head = tail = newnode;
         }
 
-        else{
+        else
+        {
             tail->next = newnode;
             tail = newnode;
         }
-}
-void printList()
+    }
+    void printList()
     {
-        Node *temp = head;
+        Node* temp = head;
 
         while (temp != NULL)
         {
             cout << temp->data << "->";
             temp = temp->next;
         }
-        // cout<<"NULL";
+        cout << "NULL";
         cout << "\n";
-}
-
-Node* mergeSort(Node* head){
-    
-}
-
-
+    }
 };
+    Node* spilitList(Node* head)
+    {
+
+        Node* slow = head;
+        Node* fast = head;
+        Node* prev = NULL;
+
+        while (fast != NULL && fast->next != NULL)
+        {
+            prev = slow;
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        if (prev != NULL)
+        {
+            prev->next = NULL;
+        }
+
+        return slow;
+    }
+
+    Node* merge(Node* left, Node* right)
+    {
+        List ans;
+        Node* i = left;
+        Node* j = right;
+
+        while (i != NULL && j != NULL)
+        {
+            if (i->data <= j->data)
+            {
+                ans.push_back(i->data);
+                i = i->next;
+            }
+            else
+            {
+                ans.push_back(j->data);
+                j = j->next;
+            }
+        }
+
+        while (i != NULL)
+        {
+            ans.push_back(i->data);
+            i = i->next;
+        }
+
+        while (j != NULL)
+        {
+            ans.push_back(j->data);
+            j = j->next;
+        }
+        return ans.head;
+    }
+
+    Node* mergeSort(Node *head)
+    {
+        cout << "mergeSort";
+
+        if (head == NULL || head->next == NULL)
+        {
+            return head;
+        }
+        Node* rightHead = spilitList(head);
+
+        Node* left = mergeSort(head);
+        Node* right = mergeSort(rightHead);
+
+        return merge(left, right);
+    }
 
 int main()
 {
     List ll;
-    // list<int>::iterator itr; //creating the iterator
+    ll.push_front(1);
+    ll.push_front(2);
     ll.push_front(3);
     ll.push_front(4);
-    ll.push_front(5);
-    ll.push_front(2);
 
+    cout << "Original List \n";
     ll.printList();
-
+    cout << "\n Sorted List \n";
     ll.head = mergeSort(ll.head);
     ll.printList();
     return 0;
