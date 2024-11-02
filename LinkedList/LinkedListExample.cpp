@@ -33,7 +33,7 @@ public:
     }
 
     ~List(){
-        // cout<<"~list \n";
+      //  cout<<"~list \n";
         if(head!=NULL){
             delete head;
             head = NULL;
@@ -47,7 +47,7 @@ public:
             head = tail = newnode;
             /*  It also written as :-
                 head = newnode
-                tail = newnode*/
+                tail = newnode */
         }
 
         else{

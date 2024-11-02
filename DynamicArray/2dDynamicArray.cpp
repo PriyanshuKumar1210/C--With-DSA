@@ -11,11 +11,11 @@ int main(){
     cin>>col;
 
 /* -- allocating the 2d Array -- */
-    int* *matrix = new int*[rows]; // areating the 2D array
+    int* *matrix = new int*[rows]; // creating the 2D array
 
     for(int i=0;i<rows;i++){
 
-        matrix[i] = new int[col]; //Pointing a column into the row of @d array
+        matrix[i] = new int[col]; //Pointing a column into the row of 2d array
 
     }
 /* --- -- */
