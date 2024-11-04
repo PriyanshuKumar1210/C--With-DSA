@@ -24,8 +24,10 @@ string reverseString(string str){
 }
 
 int main(){
+
     string str = "abcd";
     cout<<"Reverse String : "<<reverseString(str);
     cout<<endl;
     return 0;
+    
 }
