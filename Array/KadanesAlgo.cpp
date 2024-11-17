@@ -28,10 +28,9 @@ void sumSubArray(int arr[],int n){
         if(sum<0){
             sum=0;
         }
-        cout<<sum<<",";
+        //cout<<sum<<",";
     }
-        cout<<endl;
-        cout<<maxsum;
+        cout<<maxsum<<"\n";
 }
 int main(){
     int arr[] = {2,-3,6,-5,4,2};

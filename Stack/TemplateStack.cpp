@@ -35,7 +35,7 @@ int main(){
     st.push(2);
     st.push(1);
 
-    while(!st.isEmpty()z){
+    while(!st.isEmpty()){
         cout<<st.top()<<" ";
         st.pop();
     }
