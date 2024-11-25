@@ -37,7 +37,7 @@ vector<int> nextGreater(vector<int>arr){
 
 int main(){
     vector<int> arr = {6,8,0,1,3};
-    vector<int> ans = {0,0,0,0,0};
+  //  vector<int> ans = {0,0,0,0,0};
     vector<int> res = nextGreater(arr);
     for(int i=0;i<res.size();i++){
         cout<<res<<" ";
